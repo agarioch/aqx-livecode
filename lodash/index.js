@@ -1,0 +1,55 @@
+// Lodash type functions
+
+/**
+ * Memoizes a function by caching its results based on the arguments passed.
+ * 
+ * @example
+ * const add = (a, b) => a + b;
+ * const memoizedAdd = memoizeFunc(add);
+ * 
+ * memoizedAdd(2, 3); // 5
+ * memoizedAdd(2, 3); // 5 (Result should be returned from cache, add not called)
+ *
+ * @param {Function} func The function to memoize.
+ * @returns {Function} Returns the new memoized function.
+ */
+export function memoizeFunc(func) {
+  const cache = new Map();
+  return function(...args) {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    const result = func.apply(this, args);
+    cache.set(key, result);
+    return result;
+  };
+}
+
+/**
+ * Creates a throttled function that only invokes `func` at most once per `wait` milliseconds.
+ * 
+ * @example
+ * const add = (...args) => args.reduce((acc, val) => acc + val, 0);
+ * const throttledFn = throttle(add, 1000);
+ * 
+ * throttledFn(1, 2, 3); // 6
+ * throttledFn(4, 5, 6); // undefined
+ * setTimeout(() => {
+ *  throttledFn(4, 5, 6); // 15
+ * }, 1000);
+ *
+ * @param {Function} func The function to throttle.
+ * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+ * @returns {Function} Returns the new throttled function.
+ */
+export function throttle(func, wait=0) {
+  let isReady = true;
+  return function throttledFunc (...args) {
+    if (isReady) {
+      isReady = false;
+      setTimeout(() => isReady = true, wait);
+      return func(...args);
+    }
+  };
+}

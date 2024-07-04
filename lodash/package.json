@@ -1,0 +1,14 @@
+{
+  "name": "lodash",
+  "version": "1.0.0",
+  "description": "aquis live coding interview vanilla js problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "agarioch@aquis.eu",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
