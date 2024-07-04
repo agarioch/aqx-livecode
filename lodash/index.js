@@ -14,16 +14,7 @@
  * @returns {Function} Returns the new memoized function.
  */
 export function memoizeFunc(func) {
-  const cache = new Map();
-  return function(...args) {
-    const key = JSON.stringify(args);
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
-    const result = func.apply(this, args);
-    cache.set(key, result);
-    return result;
-  };
+
 }
 
 /**
@@ -44,12 +35,5 @@ export function memoizeFunc(func) {
  * @returns {Function} Returns the new throttled function.
  */
 export function throttle(func, wait=0) {
-  let isReady = true;
-  return function throttledFunc (...args) {
-    if (isReady) {
-      isReady = false;
-      setTimeout(() => isReady = true, wait);
-      return func(...args);
-    }
-  };
+
 }
