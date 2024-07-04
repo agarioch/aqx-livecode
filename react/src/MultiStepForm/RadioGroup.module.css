@@ -1,0 +1,28 @@
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  list-style-type: none;
+}
+.roleList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid hsl(240deg 30% 80%);
+  border-radius: 8px;
+  background: white;
+}
+.roleList li:has(input:checked) {
+  border: 1px solid hsl(240deg 30% 60%);
+  background: hsl(240deg 50% 92%);
+}
+.roleList .roleTitle {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.roleList li input {
+  /* Optical alignment */
+  transform: translateY(5.5px);
+}
