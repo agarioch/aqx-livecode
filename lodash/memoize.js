@@ -1,5 +1,3 @@
-// Lodash type functions
-
 /**
  * Memoizes a function by caching its results based on the arguments passed.
  * If the function is called with the same arguments, the cached result is returned.
@@ -16,27 +14,13 @@
  * @param {Function} func The function to memoize.
  * @returns {Function} Returns the new memoized function.
  */
-export function memoizeFunc(func) {}
+export function memoize(func) {
+  // TODO - write a memoize function
+  // accepts any function as an argument (func) and returns a new function that caches the result of func calls whenever it's called
+  // if the function is called again with the same arguments, the argument is returned from the cache.
+  // see jsdocs above and throttle.test.js for details
+}
 
 // Extra credit:
 // 1. Write a test for the `memoizeFunc` function that checks if it works with any primitive arguments.
 // 2. Suggest a way to make the `memoizeFunc` function work with any type of arguments not just primitive types.
-
-/**
- * Creates a throttled function that only invokes `func` at most once per `wait` milliseconds.
- *
- * @example
- * const add = (...args) => args.reduce((acc, val) => acc + val, 0);
- * const throttledFn = throttle(add, 1000);
- *
- * throttledFn(1, 2, 3); // 6
- * throttledFn(4, 5, 6); // undefined
- * setTimeout(() => {
- *  throttledFn(4, 5, 6); // 15
- * }, 1000);
- *
- * @param {Function} func The function to throttle.
- * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
- * @returns {Function} Returns the new throttled function.
- */
-export function throttle(func, wait = 0) {}
