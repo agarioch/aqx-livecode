@@ -1,11 +1,10 @@
-import { memoizeFunc, throttle, debounce } from './index';
-import { describe, it, vi, expect } from 'vitest';
+import { memoizeFunc, throttle } from "./index";
+import { describe, it, vi, expect } from "vitest";
 
 // FILEPATH: /home/agarioch/interviews/lodash/index.test.js
 
-
-describe('memoizeFunc', () => {
-  it('should execute the function correctly', () => {
+describe("memoizeFunc", () => {
+  it("should execute the function correctly", () => {
     const add = (a, b) => a + b;
     const memoizedAdd = memoizeFunc(add);
 
@@ -14,7 +13,7 @@ describe('memoizeFunc', () => {
     expect(memoizedAdd(4, 5)).toBe(9);
   });
 
-  it('should memoize the results', () => {
+  it("should memoize the results", () => {
     const mockFn = vi.fn();
     const memoizedFn = memoizeFunc(mockFn);
 
@@ -23,24 +22,24 @@ describe('memoizeFunc', () => {
     memoizedFn(1, 2);
 
     expect(mockFn).toHaveBeenCalledTimes(1); // Function should be called only once
-  })
+  });
+
+  it.todo("should work with any primitive arguments", () => {});
 });
 
-describe('throttle', () => {
-
-
-  it('should execute the original function with the correct arguments', () => {
+describe("throttle", () => {
+  it("should execute the original function with the correct arguments", () => {
     vi.useFakeTimers();
     const add = (...args) => args.reduce((acc, val) => acc + val, 0);
     const throttledFn = throttle(add, 1000);
     expect(throttledFn(1, 2, 3)).toBe(6);
     expect(throttledFn(4, 5, 6)).toBeUndefined();
     vi.advanceTimersByTime(1000);
-    expect(throttledFn(4,5,6)).toBe(15);
+    expect(throttledFn(4, 5, 6)).toBe(15);
     vi.useRealTimers();
   });
 
-  it('should throttle the execution of a function', () => {
+  it("should throttle the execution of a function", () => {
     vi.useFakeTimers();
 
     const mockFn = vi.fn();
