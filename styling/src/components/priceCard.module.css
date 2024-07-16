@@ -1,0 +1,98 @@
+/**
+ * Styling for the price card component.
+ */
+.card {
+  background: hsl(var(--neutral-800));
+  border-radius: 8px;
+  box-shadow: var(--shadow-elevation-low);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/** 
+* Styles for the background image.
+* You can probably ignore.
+*/
+.imageWrapper {
+  position: relative;
+}
+
+.bgImage {
+  line-height: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+/**
+* Styles for the card content.
+* You can probably ignore unless you want to fix something I wrote.
+*/
+.stats {
+  align-items: baseline;
+  background-color: hsl(var(--neutral-950) / 0.3);
+  backdrop-filter: blur(20px);
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 16px;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+.symbol {
+  color: hsl(var(--primary-300));
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.divider {
+  flex: 1;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-right: 2rem;
+}
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.label {
+  color: hsl(var(--gray-200));
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.positive {
+  color: hsl(var(--success-300));
+}
+.positive::before {
+  content: "▲";
+}
+.negative::before {
+  content: "▼";
+}
+.negative {
+  color: hsl(var(--danger-300));
+}
+
+/**
+* Apex / Access label
+*/
+.segment {
+  background-color: hsl(var(--primary-900));
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  color: hsl(var(--primary-100));
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  padding: 4px 16px;
+}
+.apex {
+  background-color: hsl(var(--accent-700));
+  color: hsl(var(--accent-50));
+}

@@ -1,0 +1,166 @@
+/* CSS Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* VARIABLES */
+
+:root {
+  /* (NEUTRAL) GRAY */
+  --gray-50: 204deg 45% 98%; /* #f7fafc */
+  --gray-100: 210deg 38% 95%; /* #edf2f7 */
+  --gray-200: 214deg 32% 91%; /* #e2e8f0 */
+  --gray-300: 211deg 25% 84%; /* #cbd5e0 */
+  --gray-400: 214deg 20% 69%; /* #A0AEC0 */
+  --gray-500: 216deg 15% 52%; /* #718096 */
+  --gray-600: 218deg 17% 35%; /* #4a5568 */
+  --gray-700: 218deg 23% 23%; /* #2d3748 */
+  --gray-800: 220deg 26% 14%; /* #1a202c */
+  --gray-900: 230deg 21% 11%; /* #171923 */
+
+  /* NEUTRAL (BRAND NEUTRAL) */
+  --neutral-50: 228deg 38% 95%; /* #e8eef7 */
+  --neutral-100: 229deg 38% 86%; /* #ced3e9 */
+  --neutral-200: 228deg 38% 77%; /* #aeb7db */
+  --neutral-300: 228deg 39% 68%; /* #8e9bcd */
+  --neutral-400: 228deg 39% 59%; /* #6e7fbf */
+  --neutral-500: 228deg 39% 50%; /* #4e62b1 */
+  --neutral-600: 228deg 38% 40%; /* #3f4e8d */
+  --neutral-700: 228deg 39% 30%; /* #2f3b6a */
+  --neutral-800: 228deg 39% 20%; /* #1f2747 */
+  --neutral-900: 229deg 35% 12%; /* #14182a */
+
+  /* PRIMARY (BRAND ACCENT) */
+  --primary-50: 207deg 100% 96%; /* #ebf6ff */
+  --primary-100: 212deg 100% 93%; /* #dbecff */
+  --primary-200: 213deg 100% 87%; /* #bfdcff */
+  --primary-300: 215deg 100% 80%; /* #98c3ff */
+  --primary-400: 220deg 100% 72%; /* #6f9eff */
+  --primary-500: 225deg 100% 65%; /* #4d7aff */
+  --primary-600: 229deg 98% 57%; /* #244afd */
+  --primary-700: 231deg 75% 51%; /* #2240e0 */
+  --primary-800: 230deg 71% 41%; /* #1f39b4 */
+  --primary-900: 228deg 62% 34%; /* #21368e */
+  --primary-950: 212deg 100% 16%; /* #002754 */
+
+  /* ACCENT */
+  --accent-50: 60deg 92% 95%; /* #fefee8 */
+  --accent-100: 59deg 100% 88%; /* #fffec2 */
+  --accent-200: 57deg 100% 77%; /* #fffa89 */
+  --accent-300: 55deg 100% 68%; /* #fff15c */
+  --accent-400: 52deg 98% 53%; /* #fddf12 */
+  --accent-500: 50deg 95% 47%; /* #ecc506 */
+  --accent-600: 45deg 98% 40%; /* #cc9a02 */
+  --accent-700: 40deg 94% 33%; /* #a36e05 */
+  --accent-800: 36deg 82% 29%; /* #86560d */
+  --accent-900: 33deg 74% 26%; /* #724611 */
+  --accent-950: 34deg 67% 22%; /*#5f3e13;*/
+
+  /* SUCCESS */
+  --success-50: 145deg 49% 92%; /* #e2f5ea */
+  --success-100: 143deg 46% 81%; /* #b9e5ca */
+  --success-200: 144deg 46% 69%; /* #8AD4A8 */
+  --success-300: 147deg 50% 55%; /* #53c586 */
+  --success-400: 154deg 90% 38%; /* #0ab86d */
+  --success-500: 149deg 100% 34%; /* #00ab53 */
+  --success-600: 148deg 100% 31%; /* #009c49 */
+  --success-700: 147deg 100% 27%; /* #008a3d */
+  --success-800: 144deg 100% 24%; /* #007931 */
+  --success-900: 139deg 100% 18%; /* #005a1d */
+  --success-950: 135deg 100% 15%; /* #004d13 */
+
+  /* WARN */
+  --warn-50: 37deg 100% 96%; /* #fff8ed */
+  --warn-100: 39deg 100% 92%; /* #fff0d4 */
+  --warn-200: 37deg 100% 83%; /* #fff0d4 */
+  --warn-300: 35deg 100% 72%; /* #ffc470 */
+  --warn-400: 31deg 100% 61%; /* #ff9f37 */
+  --warn-500: 29deg 100% 52%; /* #ff810c */
+  --warn-600: 25deg 95% 48%; /* #f06706 */
+  --warn-700: 22deg 93% 40%; /* #c74d07 */
+  --warn-800: 19deg 84% 34%; /* #9e3c0e */
+  --warn-900: 20deg 79% 28%; /* #7f340f */
+  --warn-950: 20deg 75% 24%; /* #6a2e0f */
+
+  /* DANGER */
+  --danger-50: 0deg 84% 95%; /* #fde8e8 */
+  --danger-100: 0deg 82% 87%; /* #f9c1c1 */
+  --danger-200: 0deg 83% 79%; /* #f69b9b */
+  --danger-300: 0deg 85% 69%; /* #f36f6f */
+  --danger-400: 0deg 86% 60%; /* #f13f3f */
+  --danger-500: 0deg 92% 49%; /* #ee0a0a */
+  --danger-600: 0deg 93% 43%; /* #d20808 */
+  --danger-700: 0deg 94% 36%; /* #b30606 */
+  --danger-800: 0deg 93% 29%; /* #8f0505 */
+  --danger-900: 0deg 93% 23%; /* #6f0404 */
+  --danger-950: 0deg 94% 18%; /* #5a0303 */
+
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--primary-900) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--primary-900) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--primary-900) / 0.34);
+}
+
+html {
+  color: hsl(var(--gray-900));
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(var(--gray-200));
+}
