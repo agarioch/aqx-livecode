@@ -1,7 +1,7 @@
 import { memoize } from "./memoize";
 import { describe, it, vi, expect } from "vitest";
 
-describe.todo(memoize.name, () => {
+describe(memoize.name, () => {
   it("the returned function should execute correctly", () => {
     const add = (a, b) => a + b;
     const memoizedAdd = memoize(add);
@@ -18,6 +18,9 @@ describe.todo(memoize.name, () => {
 
   it("the returned function should cache results and return from cache when same arguments are passed", () => {
     const mockFn = vi.fn();
+    mockFn.mockImplementation((...args) =>
+      args.reduce((sum, val) => sum + val)
+    );
     const memoizedFn = memoize(mockFn);
 
     // Basic test
